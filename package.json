@@ -1,0 +1,26 @@
+{
+  "name": "redux-funsies",
+  "version": "1.0.0",
+  "description": "A playground for me to play with Redux before doing big boy webapps.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorganCAw/redux-funsies.git"
+  },
+  "keywords": [
+    "redux",
+    "react",
+    "node",
+    "javascript",
+    "experimental"
+  ],
+  "author": "Morgan Aw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MorganCAw/redux-funsies/issues"
+  },
+  "homepage": "https://github.com/MorganCAw/redux-funsies#readme"
+}
