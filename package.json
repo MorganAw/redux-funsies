@@ -4,6 +4,20 @@
   "description": "A playground for me to play with Redux before doing big boy webapps.",
   "main": "server.js",
   "scripts": {
+    // Local helper scripts
+    "build-dev-client": "webpack",
+    "transpile": "babel ./src -d /build",
+    "dev-build": "npm run transpile && npm run build-dev-client",
+    // Local server/client scripts
+    "client-watch": "webpack -w --progress --color",
+    "local": "npm run dev-build && node ./build/server/server.js",
+    // Test-production helper scripts
+    "prod-build": "npm run transpile && webpack",
+    "prod-run": "NODE_ENV=production && node ./build/server/server.js",
+    // Test-production server script
+    "prod-test": "npm run prod-build && npm run prod-run",
+    // Production start script
+    "start": "node ./build/server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +36,26 @@
   "bugs": {
     "url": "https://github.com/MorganCAw/redux-funsies/issues"
   },
-  "homepage": "https://github.com/MorganCAw/redux-funsies#readme"
+  "homepage": "https://github.com/MorganCAw/redux-funsies#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "webpack": "^1.12.14"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
+  }
 }
