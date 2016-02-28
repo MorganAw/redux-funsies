@@ -2,20 +2,16 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   entry: [
-    'webpack-hot-middleware/client',
-    './index'
+    './src/client/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'build', 'client'),
     filename: 'bundle.js',
-    publicPath: '/static/'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.optimize.OccurenceOrderPlugin()
   ],
   module: {
     loaders: [
@@ -31,5 +27,8 @@ module.exports = {
       exclude: module_path,
       loader: 'babel'
     }]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   }
 }
