@@ -1,12 +1,23 @@
-import Button from '../presentation/Button';
+import { connect }  from 'react-redux';
+import { button_press }   from '../../actions/index';
+import Button       from '../presentation/Button';
 
-const mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     color: 'BLUE',
     active_color: state.color
   }
 }
 
-export default const BlueButton = connnect(
-  mapStateToProps
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onClick: (color) => { dispatch(button_press(color)) }
+  }
+}
+
+const BlueButton = connect(
+  mapStateToProps,
+  mapDispatchToProps
 )(Button);
+
+export default BlueButton;

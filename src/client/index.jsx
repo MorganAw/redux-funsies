@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import wooooooColors from './reducers';
 import App from './components/App';
 
-let store = createStore(todoApp)
+let store = createStore(wooooooColors)
 
 render(
   <Provider store={store}>

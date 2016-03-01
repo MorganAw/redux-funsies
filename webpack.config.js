@@ -1,5 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
+
+var module_path = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
   devtool: 'source-map',
@@ -7,7 +9,7 @@ module.exports = {
     './src/client/index'
   ],
   output: {
-    path: path.join(__dirname, 'build', 'client'),
+    path: path.join(__dirname, 'static', 'webpack'),
     filename: 'bundle.js',
   },
   plugins: [

@@ -4,19 +4,14 @@
   "description": "A playground for me to play with Redux before doing big boy webapps.",
   "main": "server.js",
   "scripts": {
-    // Local helper scripts
     "build-dev-client": "webpack",
-    "transpile": "babel ./src -d /build",
+    "transpile": "babel ./src -d ./build",
     "dev-build": "npm run transpile && npm run build-dev-client",
-    // Local server/client scripts
     "client-watch": "webpack -w --progress --color",
     "local": "npm run dev-build && node ./build/server/server.js",
-    // Test-production helper scripts
     "prod-build": "npm run transpile && webpack",
     "prod-run": "NODE_ENV=production && node ./build/server/server.js",
-    // Test-production server script
     "prod-test": "npm run prod-build && npm run prod-run",
-    // Production start script
     "start": "node ./build/server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,6 +34,7 @@
   "homepage": "https://github.com/MorganCAw/redux-funsies#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "jade": "^1.11.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",

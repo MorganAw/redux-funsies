@@ -1,20 +1,28 @@
-import express from 'express';
-import add_routes from './config/routes';
-
+import path         from 'path';
+import express      from 'express';
+import use_routes   from './config/routes';
 
 const server = new express();
 const router = express.Router();
 
+var port = process.env.PORT || 8080;
+
+server.set(
+  'views',
+  path.join(__dirname, '..', '..', 'static', 'views', 'jades')
+);
+server.set('view engine', 'jade');
+
+server.use(express.static(path.join(__dirname, '..', '..', 'static')));
+
 use_routes(server, router);
 
-server.listen(process.env.PORT || 8080, () => {
+server.listen(port, (error) => {
   if (error) {
     console.error(error);
   } else {
-    let host = server.address().address;
-    let port = server.address().port;
     let mode = server.settings.env;
 
-    console.log('App listening at http://%s:%s in %s mode', host, port, mode);
+    console.log('App listening on port %s in %s mode', port, mode);
   }
 });

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import blueActions         from './blueButton';
-import redActions          from './redButton';
+import active              from './active';
 
-export default const reducers = combineReducers({
-  blueActions,
-  redActions
+const wooooooColors = combineReducers({
+  active
 });
+
+export default wooooooColors;

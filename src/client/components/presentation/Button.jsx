@@ -12,8 +12,10 @@ export default class Button extends Component {
 
   render(){
     return(
-      <div className={ String(this.color) + ' ' + String(this.active) }>
-        Blue!!!
+      <div
+        className={ String(this.props.color) + ' ' + String(this.active) }
+        onClick={ this.props.onClick.bind(null, this.props.color) }>
+        { String(this.props.color) + '!!!' }
       </div>
     );
   }

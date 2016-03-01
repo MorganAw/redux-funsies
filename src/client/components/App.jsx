@@ -1,8 +1,15 @@
 import React, { Component }     from 'react';
-import RedButton                from './RedButton':
-import BlueButton               from './BlueButton';
+import { connect }              from 'react-redux';
+import RedButton                from './container/RedButton';
+import BlueButton               from './container/BlueButton';
 
-export default class App extends Component {
+const mapStateToProps = (state) => {
+  return {
+    background: state.active
+  }
+}
+
+class App extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -10,9 +17,14 @@ export default class App extends Component {
   render() {
     return(
       <div className="app">
+        Background Color: { this.props.background }
         <RedButton />
         <BlueButton />
       </div>
     );
   }
 }
+
+App = connect(mapStateToProps)(App);
+
+export default App;
