@@ -6,7 +6,7 @@ var module_path = path.resolve(__dirname, 'node_modules');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    './src/client/index'
+    './src/client/client'
   ],
   output: {
     path: path.join(__dirname, 'static', 'webpack'),

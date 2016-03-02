@@ -5,7 +5,9 @@ import { createStore } from 'redux';
 import wooooooColors from './reducers';
 import App from './components/App';
 
-let store = createStore(wooooooColors)
+const initialState = window.__INITIAL_STATE__;
+
+const store = createStore(wooooooColors, initialState);
 
 render(
   <Provider store={store}>

@@ -4,6 +4,7 @@
   "description": "A playground for me to play with Redux before doing big boy webapps.",
   "main": "server.js",
   "scripts": {
+    "clean": "rm -rf ./build",
     "build-dev-client": "webpack",
     "transpile": "babel ./src -d ./build",
     "dev-build": "npm run transpile && npm run build-dev-client",

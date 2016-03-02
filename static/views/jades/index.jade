@@ -9,4 +9,6 @@ html
 
   body
     #root!=stuff
+    script.
+      window.__INITIAL_STATE__ = !{ JSON.stringify(initialState) }
     script(src='../../webpack/bundle.js')
