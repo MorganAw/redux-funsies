@@ -6,9 +6,10 @@ import App                      from './components/App';
 // import Deadend                  from ;
 
 const react_routes = (
-  <Route path="/" component={ App }>
-    {/* <IndexRoute component={ Buttons }/> */}
-  </Route>
+  <Route path="/" component={ App } />
 );
+//    <IndexRoute component={ Buttons }/>
+//  </Route>
+//);
 
 export default react_routes;
