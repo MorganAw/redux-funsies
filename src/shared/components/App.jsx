@@ -9,15 +9,16 @@ const mapStateToProps = (state) => {
   }
 }
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return(
-      <div className="app">
+      <div className="app" style={{ backgroundColor: this.props.background }}>
         Background Color: { this.props.background }
+        { this.props.children }
         <RedButton />
         <BlueButton />
       </div>

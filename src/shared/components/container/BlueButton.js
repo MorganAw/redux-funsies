@@ -1,6 +1,6 @@
-import { connect }  from 'react-redux';
+import { connect }        from 'react-redux';
 import { button_press }   from '../../actions/index';
-import Button       from '../presentation/Button';
+import Button             from '../presentation/Button';
 
 const mapStateToProps = (state) => {
   return {
