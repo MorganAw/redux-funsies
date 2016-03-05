@@ -20,6 +20,10 @@ export default function use_routes(server, router) {
   server.get('/', (req, res) => {
     server_render(req, res);
   });
+
+  server.get('/backbutton', (req, res) => {
+    server_render(req, res);
+  });
 }
 
 function server_render(req, res) {
